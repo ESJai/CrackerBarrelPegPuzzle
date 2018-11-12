@@ -8,3 +8,6 @@ Note:
   To install lambda package, run the compiler (e.g. swipl),
    enter "pack_install('http://www.swi-prolog.org/download/pack/lambda-1.0.0.tgz')"
   
+
+To Run:
+  Use :- go.
