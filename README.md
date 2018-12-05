@@ -1,6 +1,25 @@
 # CrackerBarrelPegPuzzle
 Author: KwanHo Yu
 
+------------------------------------------------------------------------------------------
+
+cracker.java
+
+Description:
+  Java program to solve CrackerBarrelPegPuzzle
+
+  
+Tested on UNT CSE Machine
+
+
+
+
+
+
+------------------------------------------------------------------------------------------
+
+hw6.pl
+
 Description:
   Prolog program to solve CrackerBarrelPegPuzzle
 
