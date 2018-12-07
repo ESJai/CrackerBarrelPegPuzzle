@@ -27,7 +27,7 @@ public class cracker
 	
 	private static ArrayList<int[]> FinalMoveList = new ArrayList<int[]>(13);
 	
-	public static int move(char[] board, ArrayList<Integer> Occupied, ArrayList<Integer> Free, ArrayList<int[]> moveList, int Left)
+	public static int move(ArrayList<Integer> Occupied, ArrayList<Integer> Free, ArrayList<int[]> moveList, int Left)
 	{
 		if(Left==1)
 		{
@@ -35,23 +35,17 @@ public class cracker
 			return 1;
 		}
 		
-		int hasMove=0;
 		for (int j=0; j<36;j++)
 		{
 			
 			if(Occupied.contains(moves[j][0])&&Occupied.contains(moves[j][1])&&Free.contains(moves[j][2]))
 			{
-				hasMove=1;
 				
-				char[] tempBoard = board.clone();
 				ArrayList<Integer> tempOccu= new ArrayList<Integer>(Occupied);
 				ArrayList<Integer> tempFree= new ArrayList<Integer>(Free);
 				ArrayList<int[]> tempMoveList = new ArrayList<int[]>(moveList);
 				int tempLeft=Left;
 				
-				tempBoard[moves[j][0]]='.';
-				tempBoard[moves[j][1]]='.';
-				tempBoard[moves[j][2]]='x';
 					
 				tempFree.add(moves[j][0]);
 				tempFree.add(moves[j][1]);
@@ -65,9 +59,8 @@ public class cracker
 				tempMoveList.add(moves[j]);
 				
 				
-				if(move(tempBoard,  tempOccu, tempFree, tempMoveList, tempLeft)==1)
+				if(move(tempOccu, tempFree, tempMoveList, tempLeft)==1)
 				{
-					
 					return 1;
 				}
 			}
@@ -115,7 +108,7 @@ public class cracker
 			
 			
 			//find solution
-			if(move(board, Occupied, Free, FinalMoveList, 14)==1)
+			if(move(Occupied, Free, FinalMoveList, 14)==1)
 			{
 				for(int j=0;j<13;j++)
 				{
